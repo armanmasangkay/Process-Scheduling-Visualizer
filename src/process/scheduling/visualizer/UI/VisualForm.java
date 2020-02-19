@@ -15,36 +15,33 @@ import javax.swing.Timer;
  *
  * @author armanmasangkay
  */
-public class VisualForm extends javax.swing.JFrame implements ActionListener {
-    Timer timer=new Timer(5,this);
-    int x=0;int velX=1;
+public class VisualForm extends javax.swing.JFrame {
+//    Timer timer=new Timer(5,this);
+//    int x=0;int velX=2;
     
     /**
      * Creates new form VisualForm
      */
     public VisualForm() {
+        DrawPane dp=new DrawPane();
+        this.add(dp);
         initComponents();
-       // timer=new Timer(5,this);
-        
+     
+      
     }
     
-//    public void paintComponent(Graphics g){
-//        super.paintComponent(g);
+
+    
+//      @Override
+//    public void actionPerformed(ActionEvent e) {
+//      //  System.out.println("action performed");
+//      x=x+velX;
+//      Graphics g=jPanel1.getGraphics();
+//        jPanel1.paint(g);
 //        g.setColor(Color.red);
-//        g.fillRect(10,30,50,30);
-//        
+//        g.drawRect(x,30,50,30);
+//      //jPanel1.repaint();
 //    }
-    
-      @Override
-    public void actionPerformed(ActionEvent e) {
-      //  System.out.println("action performed");
-      x=x+velX;
-      Graphics g=jPanel1.getGraphics();
-        jPanel1.paint(g);
-        g.setColor(Color.red);
-        g.fillRect(x,30,50,30);
-      //jPanel1.repaint();
-    }
 
 
     /**
@@ -95,13 +92,16 @@ public class VisualForm extends javax.swing.JFrame implements ActionListener {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
        System.out.println("Activated");
 
-        timer.start();
+        //timer.start();
     }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

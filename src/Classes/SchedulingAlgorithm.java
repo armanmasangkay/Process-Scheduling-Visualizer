@@ -22,7 +22,7 @@ public abstract class SchedulingAlgorithm {
    
     
     
-    public void add(Process process){
+    public void addProcess(Process process){
         processes.add(process);
     }
     
