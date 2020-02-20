@@ -9,13 +9,13 @@ package Classes;
  *
  * @author armanmasangkay
  */
-public class Process {
+public class SchedProcess {
     
     private final String name;
     private final int arrivalTime;
     private final int burstTime;
 
-    public Process(String name, int arrivalTime, int burstTime) {
+    public SchedProcess(String name, int arrivalTime, int burstTime) {
         this.name = name;
         this.arrivalTime = arrivalTime;
         this.burstTime = burstTime;

@@ -14,7 +14,7 @@ import java.util.List;
  */
 public abstract class SchedulingAlgorithm {
     
-    private List<Process> processes;
+    private List<SchedProcess> processes;
 
     public SchedulingAlgorithm() {
         this.processes = new ArrayList<>();
@@ -22,7 +22,7 @@ public abstract class SchedulingAlgorithm {
    
     
     
-    public void addProcess(Process process){
+    public void addProcess(SchedProcess process){
         processes.add(process);
     }
     
