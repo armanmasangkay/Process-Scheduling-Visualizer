@@ -15,20 +15,26 @@ import java.awt.Graphics;
  */
 public class ProcessBlock {
     private final SchedProcess process;
-    private final int height,width;
+    private final int width=20,height=30;
+   // private final int height,width;
     
-    public ProcessBlock(SchedProcess process, int height,int width) {
+    public ProcessBlock(SchedProcess process) {
         this.process=process;
-        this.height=height;
-        this.width=width;
+//        this.height=height;
+//        this.width=width;
     }
     
     public void show(Graphics g, int x ,int y){
         
-        double segmentSize=width/process.getBurstTime();
-        
-        g.setColor(Color.red);
-        g.fillRect(x, y, segmentSize, height);
+        //double segmentSize=width/process.getBurstTime();
+        for (int i=0;i<process.getBurstTime();i++){
+            g.setColor(Color.red);
+            g.drawRect(x, y, width, height);
+            g.drawString("Hi", (width+x)/2, (height+y)/2);
+            x+=width;
+            
+        }
+       
     }
     
     

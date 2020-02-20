@@ -5,6 +5,8 @@
  */
 package process.scheduling.visualizer.UI;
 
+import Classes.SchedProcess;
+import Drawing.ProcessBlock;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -19,13 +21,16 @@ import javax.swing.Timer;
 public class DrawPane extends javax.swing.JPanel implements ActionListener{
     Timer timer;
     int x=0, velX=2;
+    SchedProcess process;
+    ProcessBlock block1;
     /**
      * Creates new form DrawPane
      */
     public DrawPane() {
         initComponents();
         timer=new Timer(5,this);
-        
+        process=new SchedProcess("P1",2,5);
+        block1=new ProcessBlock(process);
     }
 
     /**
@@ -52,18 +57,20 @@ public class DrawPane extends javax.swing.JPanel implements ActionListener{
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        g.setColor(Color.red);
-        g.fillRect(x, 30, 50, 30);
-        if(!timer.isRunning()){
-             timer.start();
-        }
-       
+//        g.setColor(Color.red);
+//        g.fillRect(x, 30, 50, 30);
+//        if(!timer.isRunning()){
+//             timer.start();
+//        }
+        block1.show(g, 0, 0);
+        
+         
        
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-      x=x+velX;
+     // x=x+velX;
       repaint();
     }
     
